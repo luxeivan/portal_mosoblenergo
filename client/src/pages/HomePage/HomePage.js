@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function HomePage() {
   return (
-    <div>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>
+    <div>Проверка</div>
   )
 }

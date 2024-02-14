@@ -4,6 +4,6 @@ import styles from './HomePage.module.css'
 
 export default function HomePage() {
   return (
-    <div className={styles.homePage}>Проверка</div>
+    <div className={styles.homePage}></div>
   )
 }

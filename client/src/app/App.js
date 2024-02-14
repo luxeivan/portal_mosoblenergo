@@ -28,6 +28,7 @@ const App = () => {
         style={{
           display: "flex",
           alignItems: "center",
+          background: "inherit"
         }}
       >
         <div

@@ -8,9 +8,9 @@ import AuthPage from "../pages/AuthPage/AuthPage";
 const App = () => {
   return (
     <>
-      <HeaderWidget />
       <div className="App">
         <BrowserRouter>
+          <HeaderWidget />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/auth" element={<AuthPage />} />

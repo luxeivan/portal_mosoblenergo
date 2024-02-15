@@ -4,6 +4,7 @@ import { Header } from "antd/es/layout/layout";
 import styles from "./HeaderWidget.module.css";
 import logo from "../../shared/asssets/logo.svg";
 import CustomButton from "../../shared/ui/CustomButton/CustomButton";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   {
@@ -21,6 +22,12 @@ const items = [
 ];
 
 const HeaderWidget = () => {
+  const navigate = useNavigate();
+
+  const onLoginClick = () => {
+    navigate("/auth"); 
+  };
+
   return (
     <Header
       style={{
@@ -42,7 +49,7 @@ const HeaderWidget = () => {
           minWidth: 0,
         }}
       />
-      <CustomButton type="text">Войти</CustomButton>
+      <CustomButton type="text" onClick={onLoginClick}>Войти</CustomButton>
     </Header>
   );
 };

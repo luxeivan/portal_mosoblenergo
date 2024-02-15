@@ -1,6 +1,6 @@
 import React from "react";
 import CustomForm from "../../shared/ui/CustomForm/CustomForm";
-import styles from "./FormLogin.module.css";
+// import styles from "./FormLogin.module.css";
 
 const formConfig = {
   layout: {

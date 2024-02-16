@@ -3,7 +3,7 @@ const router = express.Router();
 const { check, validationResult } = require("express-validator");
 const sendCodeToMail = require('../services/sendCodeToMail')
 const sendCodeToPhone = require('../services/sendCodeToPhone')
-const { createNewUser, updateUser, checkUserByEmail } = require('../services/storage')
+const { createNewUser, updateUser, checkUserByEmail } = require('../services/usersonec')
 
 
 const attempts = 3 //Количество попыток
@@ -162,7 +162,7 @@ router.post('/newuser', async (req, res) => {
     if (checkUser) {
         //Обновление пароля и телефона пользователя с указанным email
         try {
-            await updateUser(checkUser, req.session.phone, req.body.password)
+            await updateUser(checkUser, req.session.email, req.session.phone, req.body.password)
             const email = req.session.email
             req.session.destroy()
             return res.json({ status: 'ok', message: `Пароль и телефон обновлен у пользователя: ${email}` })

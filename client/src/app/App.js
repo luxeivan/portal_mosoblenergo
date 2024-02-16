@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage/HomePage";
 import "./App.css";
-import HeaderWidget from "../widgets/HeaderWidget/HeaderWidget";
+import HeaderWidget from "../components/HeaderWidget/HeaderWidget";
 import AuthPage from "../pages/AuthPage/AuthPage";
 
 const App = () => {

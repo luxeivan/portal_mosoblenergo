@@ -2,8 +2,8 @@
 import React from "react";
 import styles from "./AuthPage.module.css";
 import { Helmet } from "react-helmet";
-import FormLogin from "../../features/FormLogin/FormLogin";
-import FormRegistration from "../../features/FormRegistration/FormRegistration";
+import FormLogin from "../../components/FormLogin/FormLogin";
+import FormRegistration from "../../components/FormRegistration/FormRegistration";
 import { Tabs } from "antd";
 
 const { TabPane } = Tabs;

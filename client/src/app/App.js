@@ -19,6 +19,7 @@ const items = [
   {
     key: "3",
     label: "Калькулятор мощности",
+    
   },
 ];
 const App = () => {
@@ -50,7 +51,7 @@ const App = () => {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/homepage" element={<HomePage />} />
+            <Route path="/" element={<HomePage />} />
           </Routes>
         </BrowserRouter>
       </div>

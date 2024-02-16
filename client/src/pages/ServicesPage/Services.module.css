@@ -1,0 +1,45 @@
+.servicesPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 97, 175, 1) 0%,
+    rgba(0, 143, 213, 1) 50%,
+    rgba(0, 97, 175, 1) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientScroll 6s ease-in-out infinite;
+}
+
+.servicesTitleContainer {
+  margin-bottom: 2rem;
+}
+
+.servicesTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.servicesCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.serviceCard {
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+}

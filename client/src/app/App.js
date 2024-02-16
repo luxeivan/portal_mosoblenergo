@@ -6,6 +6,7 @@ import HeaderWidget from "../components/HeaderWidget/HeaderWidget";
 import AuthPage from "../pages/AuthPage/AuthPage";
 import Services from "../pages/ServicesPage/Services";
 
+
 const App = () => {
   return (
     <>

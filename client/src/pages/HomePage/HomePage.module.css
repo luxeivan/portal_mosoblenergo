@@ -4,15 +4,6 @@
   100% { background-position: 0% 50%; }
 }
 
-<<<<<<< HEAD
-
-.homePage {
-  /* background-size: 200% 200%; */
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100%;
-  /* background-image: linear-gradient(
-=======
 .homePage {
   position: relative;
   height: 100vh;
@@ -31,32 +22,10 @@
   right: 0;
   bottom: 0;
   background-image: linear-gradient(
->>>>>>> 43e6627d187e358a02bcab7e405e0ba54a0ab3fa
     45deg,
     rgba(0, 97, 175, 1) 0%,
     rgba(0, 143, 213, 1) 50%,
     rgba(0, 97, 175, 1) 100%
-<<<<<<< HEAD
-  ); */
-  animation: gradientScroll 6s ease-in-out infinite; 
-  background: transparent;
-  overflow: hidden;
-  position: relative;
-}
-
-.button{
-  background-color: blueviolet;
-  cursor: pointer;
-}
-.button:hover{
-  background-color: greenyellow
-}
-.button::before{
-  content: "123";
-  display: block;
-  font-size: 40px;
-}
-=======
   );
   background-size: 200% 200%;
   background-repeat: no-repeat;
@@ -66,4 +35,3 @@
 }
 
 
->>>>>>> 43e6627d187e358a02bcab7e405e0ba54a0ab3fa

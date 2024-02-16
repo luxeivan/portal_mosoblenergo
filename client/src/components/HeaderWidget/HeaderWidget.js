@@ -4,27 +4,32 @@ import { Header } from "antd/es/layout/layout";
 import styles from "./HeaderWidget.module.css";
 import { useNavigate } from "react-router-dom";
 
-const items = [
-  {
-    key: "1",
-    label: "Услуги",
-  },
-  {
-    key: "2",
-    label: "О Нас",
-  },
-  {
-    key: "3",
-    label: "Калькулятор мощности",
-  },
-];
-
 const HeaderWidget = () => {
   const navigate = useNavigate();
 
   const onLoginClick = () => {
     navigate("/auth");
   };
+
+  const onServicesClick = () => {
+    navigate("/services");
+  };
+
+  const items = [
+    {
+      key: "1",
+      label: "Услуги",
+      onClick: onServicesClick,
+    },
+    {
+      key: "2",
+      label: "О Нас",
+    },
+    {
+      key: "3",
+      label: "Калькулятор мощности",
+    },
+  ];
 
   return (
     <Header
@@ -35,7 +40,6 @@ const HeaderWidget = () => {
       }}
     >
       <div className={styles.logo}>
-        {/* <img src={logo} alt="Logo" /> */}
         <svg
           width="239.929993"
           height="37.989990"
@@ -306,38 +310,6 @@ const HeaderWidget = () => {
             />
           </g>
         </svg>
-        {/* <div className={styles.sunRotate}>
-          <svg width="239.929993" height="37.989990" viewBox="0 0 239.93 37.99" fill="none" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
-            <desc>
-              Created with Pixso.
-            </desc>
-            <defs>
-              <clipPath id="clip4_254">
-                <rect id="logo" width="239.929993" height="37.990002" fill="white" fill-opacity="0" />
-              </clipPath>
-            </defs>
-            <g clip-path="url(#clip4_254)">
-              <g>
-                <path id="path-2" d="M36.55 0L38.46 5.26001L37.82 5.26001L36.55 2.32001L35.28 5.26001L34.64 5.26001L36.55 0Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-3" d="M30.21 2.10001L33.82 5.62L33.3 5.87L31.12 3.98001L31.25 6.85001L30.73 7.10001L30.21 2.10001Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-4" d="M25.67 6.17999L29.89 7.62L29.57 8.01001L27.11 7.32001L28.31 9.54999L27.99 9.94L25.67 6.17999Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-5" d="M23.18 11.5L27.4 11.04L27.28 11.53L24.98 11.94L26.8 13.46L26.68 13.95L23.18 11.5Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-6" d="M43.19 2.18002L39.54 5.66L40.06 5.91L42.26 4.04001L42.1 6.91L42.62 7.16L43.19 2.18002Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-7" d="M47.5599 6.17001L43.34 7.62003L43.66 8.01001L46.12 7.32001L44.92 9.56003L45.24 9.95001L47.5599 6.17001Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-8" d="M49.99 11.26L45.76 10.88L45.89 11.37L48.2 11.74L46.41 13.29L46.54 13.78L49.99 11.26Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-9" d="M36.71 5.62C41.66 5.62 45.67 9.59 45.67 14.5C45.67 19.41 41.66 23.38 36.71 23.38C31.76 23.38 27.75 19.4 27.75 14.5C27.75 9.60001 31.76 5.62 36.71 5.62ZM36.71 7.44998C32.78 7.44998 29.6 10.6 29.6 14.49C29.6 18.38 32.78 21.54 36.71 21.54C40.64 21.54 43.82 18.38 43.82 14.49C43.82 10.6 40.64 7.44998 36.71 7.44998Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-10" d="M36.55 29.46L38.46 24.19L37.82 24.19L36.55 27.14L35.28 24.19L34.64 24.19L36.55 29.46Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-11" d="M30.45 27.47L34 23.89L33.48 23.65L31.33 25.58L31.41 22.71L30.88 22.47L30.45 27.47Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-12" d="M25.39 22.94L29.65 21.63L29.34 21.23L26.86 21.84L28.13 19.65L27.82 19.25L25.39 22.94Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-13" d="M23.07 17.49L27.27 18.1L27.17 17.61L24.88 17.12L26.76 15.67L26.66 15.18L23.07 17.49Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-14" d="M42.79 27.47L39.24 23.89L39.76 23.65L41.91 25.58L41.83 22.71L42.35 22.47L42.79 27.47Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-15" d="M47.82 22.97L43.56 21.65L43.87 21.25L46.35 21.86L45.08 19.66L45.39 19.26L47.82 22.97Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-                <path id="path-16" d="M50.12 17.69L45.91 18.24L46.02 17.75L48.31 17.29L46.46 15.81L46.5699 15.32L50.12 17.69Z" fill="#E37021" fill-opacity="1.000000" fill-rule="evenodd" />
-              </g>
-
-            </g>
-          </svg>
-        </div> */}
       </div>
       <Menu
         theme="light"

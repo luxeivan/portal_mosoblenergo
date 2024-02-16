@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import "./App.css";
 import HeaderWidget from "../components/HeaderWidget/HeaderWidget";
 import AuthPage from "../pages/AuthPage/AuthPage";
+import Services from "../pages/ServicesPage/Services";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/auth" element={<AuthPage />} />
+            <Route path='/services' element={<Services />} />
           </Routes>
         </BrowserRouter>
       </div>

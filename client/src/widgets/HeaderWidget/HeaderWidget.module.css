@@ -1,6 +1,24 @@
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunRotate {
+  display: block;
+  animation: logorotate 5s linear infinite;
+  transform-origin: 37px 15px;
+}
+
+@keyframes logorotate {
+  0% {
+    Transform: rotate(0deg)
   }
-  
+  50% {
+    Transform: rotate(180deg)
+  }
+
+  100% {
+    Transform: rotate(360deg)
+  }
+}

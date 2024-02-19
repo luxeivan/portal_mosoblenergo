@@ -1,7 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px);
+}
+
 .authPage {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 20%); 
-    padding-top: 20%; 
+    min-height: calc(100vh - 20%);
 }

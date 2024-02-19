@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Card } from "antd";
+import { Link } from "react-router-dom";
 import styles from "./Services.module.css";
 
 export default function Services() {
@@ -13,21 +14,35 @@ export default function Services() {
         <h1 className={styles.servicesTitle}>Каталог услуг МосОблЭнерго</h1>
       </div>
       <div className={styles.servicesCardsContainer}>
-        <Card
-          className={styles.serviceCard}
-          title="Услуги технологического присоединения"
-        >
-          <p>
-            Приказ Минзнерго от 15.04.2014 Nº 186 (ред. от 07.07.2021 Nº 541)
-          </p>
-        </Card>
-        <Card className={styles.serviceCard} title="Коммерчиские услуги"></Card>
-        <Card className={styles.serviceCard} title="Учёт электрической энергии">
-          <p>
-            Приказ Минзнерго от 15.04.2014 Nº 186 (ред. от 07.07.2021 Nº 541)
-          </p>
-        </Card>
-        <Card className={styles.serviceCard} title="Сервисные услуги"></Card>
+        <Link to="/services/1" className={styles.serviceLink}>
+          <Card
+            className={styles.serviceCard}
+            title="Услуги технологического присоединения"
+          >
+            <p>
+              Приказ Минзнерго от 15.04.2014 Nº 186 (ред. от 07.07.2021 Nº 541)
+            </p>
+          </Card>
+        </Link>
+        <Link to="/services/2" className={styles.serviceLink}>
+          <Card
+            className={styles.serviceCard}
+            title="Коммерчиские услуги"
+          ></Card>
+        </Link>
+        <Link to="/services/3" className={styles.serviceLink}>
+          <Card
+            className={styles.serviceCard}
+            title="Учёт электрической энергии"
+          >
+            <p>
+              Приказ Минзнерго от 15.04.2014 Nº 186 (ред. от 07.07.2021 Nº 541)
+            </p>
+          </Card>
+        </Link>
+        <Link to="/services/3" className={styles.serviceLink}>
+          <Card className={styles.serviceCard} title="Сервисные услуги"></Card>
+        </Link>
       </div>
     </div>
   );

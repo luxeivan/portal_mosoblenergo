@@ -43,3 +43,9 @@
 .serviceCard:hover {
   transform: translateY(-10px);
 }
+
+.serviceLink {
+  color: inherit;
+  text-decoration: none; 
+}
+

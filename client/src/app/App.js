@@ -5,6 +5,7 @@ import "./App.css";
 import HeaderWidget from "../components/HeaderWidget/HeaderWidget";
 import AuthPage from "../pages/AuthPage/AuthPage";
 import Services from "../pages/ServicesPage/Services";
+import ServiceDetails from "../pages/ServicesPage/ServiceDetails/ServiceDetails";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path='/services' element={<Services />} />
+            <Route path="/services/:serviceId" element={<ServiceDetails />} />
           </Routes>
         </BrowserRouter>
       </div>

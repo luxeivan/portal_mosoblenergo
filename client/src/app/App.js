@@ -4,8 +4,8 @@ import HomePage from "../pages/HomePage/HomePage";
 import "./App.css";
 import HeaderWidget from "../components/HeaderWidget/HeaderWidget";
 import AuthPage from "../pages/AuthPage/AuthPage";
-import Services from "../pages/ServicesPage/Services";
-import ServiceDetails from "../pages/ServicesPage/ServiceDetails/ServiceDetails";
+import Services from "../pages/ServicesPage/ServicesLevelTwo";
+import ServiceDetails from "../pages/ServicesPage/ServicesLevelThree/ServicesLevelThree";
 
 
 const App = () => {

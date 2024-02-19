@@ -1,0 +1,75 @@
+.detailsPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+    background: linear-gradient(
+      45deg,
+      rgba(0, 97, 175, 1) 0%,
+      rgba(0, 143, 213, 1) 50%,
+      rgba(0, 97, 175, 1) 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientScroll 6s ease-in-out infinite;
+  }
+  
+  .serviceTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #003366;
+    margin-bottom: 2rem;
+  }
+  
+  .serviceContent {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+  
+  .subServicesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+  
+  .subServiceCard {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px; 
+    transition: transform 0.3s ease;
+    overflow: hidden; 
+  }
+
+  .subServiceCard .ant-card-head-title {
+    font-size: 1rem; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+  }
+  
+  .subServiceCard:hover {
+    transform: translateY(-10px);
+  }
+  
+  .notFound {
+    font-size: 1.5rem;
+    color: #ff0000;
+    text-align: center;
+  }
+  
+  .backLink {
+    display: block;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  

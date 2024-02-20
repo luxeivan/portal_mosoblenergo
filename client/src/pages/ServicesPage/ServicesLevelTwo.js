@@ -14,7 +14,7 @@ const cadrArr = [
   {
     title: "Коммерческие услуги",
     description: false,
-    url: "/services/kommercheskie-uslugiss"
+    url: "/services/kommercheskie-uslugis"
   },
   {
     title: "Учёт электрической энергии",

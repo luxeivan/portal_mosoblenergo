@@ -1,5 +1,99 @@
+// import React from "react";
+// import { useParams, Link, useNavigate } from "react-router-dom";
+// import { Card } from "antd";
+// import styles from "./ServicesLevelThree.module.css";
+
+// const serviceDetailsData = {
+//   "uslugi-tehnologicheskogo-prisoedineniyas": {
+//     title: "Услуги технологического присоединения",
+//     content: "Приказ Минэнерго от 15.04.2014 № 186 (ред. от 07.07.2021 № 541)",
+//     subServices: [
+//       { title: "Физические лица" },
+//       { title: "Юридические лица" },
+//       { title: "Индивидуальные предприниматели" },
+//       { title: "Энергосбытовая организация" },
+//     ],
+//   },
+//   "kommercheskie-uslugis": {
+//     title: "Коммерчиские услуги",
+//     subServices: [
+//       { title: "Ремонт, техническое и оперативное обслуживание" },
+//       { title: "Услуги аренды" },
+//       { title: "Обслуживание приборов учёта" },
+//       {
+//         title: "Дополнительные услуги в рамках технологического присоединения",
+//       },
+//       { title: "Освобождение земельного участка от электрических сетей" },
+//     ],
+//   },
+//   "uchet-elektricheskoj-energiis": {
+//     title: "Учёт электрической энергии",
+//     content:
+//       "Приказ Минзнерго от 15.04.2014 Nº 186 (ред. от 07.07.2021 Nº 541)",
+//     subServices: [
+//       { title: "Физические лица" },
+//       { title: "Юридические лица" },
+//       { title: "Индивидуальные предприниматели" },
+//       { title: "Сетевые организации" },
+//       { title: "Энергосбытовая организация" },
+//     ],
+//   },
+//   "servisnye-uslugis": {
+//     title: "Сервисные услуги",
+//     subServices: [
+//       { title: "Актуальная инфомрация профиля" },
+//       { title: "Подписка на информационные сообщения" },
+//       { title: "И т.д" },
+//     ],
+//   },
+// };
+
+// const ServiceDetails = () => {
+//   const { serviceId } = useParams();
+//   const navigate = useNavigate();
+//   const service = serviceDetailsData[serviceId];
+
+//   const handleSubServiceClick = (subServiceId) => {
+//     navigate(`/services/${serviceId}/${subServiceId}`);
+//   };
+
+//   if (!service) {
+//     return <div className={styles.notFound}>Услуга не найдена</div>;
+//   }
+
+//   return (
+//     <div className={styles.detailsPage}>
+//       <h2 className={styles.serviceTitle}>{service.title}</h2>
+//       <p className={styles.serviceContent}>{service.content}</p>
+//       <div className={styles.subServicesContainer}>
+//         {service.subServices &&
+//           service.subServices.map((subService, index) => (
+//             <Card
+//               onClick={() => handleSubServiceClick(index + 1)}
+//               className={styles.subServiceCard}
+//               key={index}
+//             >
+//               <h2>{subService.title}</h2>
+//               <p>{subService.content}</p>
+//             </Card>
+//           ))}
+//       </div>
+//       <Link to="/services" className={styles.backLink}>
+//         Вернуться к списку услуг
+//       </Link>
+//     </div>
+//   );
+// };
+
+// export default ServiceDetails;
+
 import React from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import {
+  useParams,
+  Link,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import { Card } from "antd";
 import styles from "./ServicesLevelThree.module.css";
 
@@ -8,22 +102,38 @@ const serviceDetailsData = {
     title: "Услуги технологического присоединения",
     content: "Приказ Минэнерго от 15.04.2014 № 186 (ред. от 07.07.2021 № 541)",
     subServices: [
-      { title: "Физические лица" },
-      { title: "Юридические лица" },
-      { title: "Индивидуальные предприниматели" },
-      { title: "Энергосбытовая организация" },
+      { title: "Физические лица", type: "Физические лица" },
+      { title: "Юридические лица", type: "Юридические лица" },
+      {
+        title: "Индивидуальные предприниматели",
+        type: "Индивидуальные предприниматели",
+      },
+      {
+        title: "Энергосбытовая организация",
+        type: "Энергосбытовая организация",
+      },
     ],
   },
   "kommercheskie-uslugis": {
     title: "Коммерчиские услуги",
     subServices: [
-      { title: "Ремонт, техническое и оперативное обслуживание" },
-      { title: "Услуги аренды" },
-      { title: "Обслуживание приборов учёта" },
+      {
+        title: "Ремонт, техническое и оперативное обслуживание",
+        type: "Ремонт, техническое и оперативное обслуживание",
+      },
+      { title: "Услуги аренды", type: "Услуги аренды" },
+      {
+        title: "Обслуживание приборов учёта",
+        type: "Обслуживание приборов учёта",
+      },
       {
         title: "Дополнительные услуги в рамках технологического присоединения",
+        type: "Дополнительные услуги в рамках технологического присоединения",
       },
-      { title: "Освобождение земельного участка от электрических сетей" },
+      {
+        title: "Освобождение земельного участка от электрических сетей",
+        type: "Освобождение земельного участка от электрических сетей",
+      },
     ],
   },
   "uchet-elektricheskoj-energiis": {
@@ -31,30 +141,44 @@ const serviceDetailsData = {
     content:
       "Приказ Минзнерго от 15.04.2014 Nº 186 (ред. от 07.07.2021 Nº 541)",
     subServices: [
-      { title: "Физические лица" },
-      { title: "Юридические лица" },
-      { title: "Индивидуальные предприниматели" },
-      { title: "Сетевые организации" },
-      { title: "Энергосбытовая организация" },
+      { title: "Физические лица", type: "Физические лица" },
+      { title: "Юридические лица", type: "Юридические лица" },
+      {
+        title: "Индивидуальные предприниматели",
+        type: "Индивидуальные предприниматели",
+      },
+      { title: "Сетевые организации", type: "Сетевые организации" },
+      {
+        title: "Энергосбытовая организация",
+        type: "Энергосбытовая организация",
+      },
     ],
   },
   "servisnye-uslugis": {
     title: "Сервисные услуги",
     subServices: [
-      { title: "Актуальная инфомрация профиля" },
-      { title: "Подписка на информационные сообщения" },
-      { title: "И т.д" },
+      {
+        title: "Актуальная инфомрация профиля",
+        type: "Актуальная инфомрация профиля",
+      },
+      {
+        title: "Подписка на информационные сообщения",
+        type: "Подписка на информационные сообщения",
+      },
+      { title: "И т.д", type: "И т.д" },
     ],
   },
 };
 
 const ServiceDetails = () => {
   const { serviceId } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
   const service = serviceDetailsData[serviceId];
 
-  const handleSubServiceClick = (subServiceId) => {
-    navigate(`/services/${serviceId}/${subServiceId}`);
+  const handleSubServiceClick = (type) => {
+    const subService = service.subServices.find((s) => s.type === type);
+    setSearchParams({ path: serviceId, type: subService.type });
   };
 
   if (!service) {
@@ -67,11 +191,10 @@ const ServiceDetails = () => {
       <p className={styles.serviceContent}>{service.content}</p>
       <div className={styles.subServicesContainer}>
         {service.subServices &&
-          service.subServices.map((subService, index) => (
+          service.subServices.map((subService) => (
             <Card
-              onClick={() => handleSubServiceClick(index + 1)}
+              onClick={() => handleSubServiceClick(subService.type)}
               className={styles.subServiceCard}
-              key={index}
             >
               <h2>{subService.title}</h2>
               <p>{subService.content}</p>
